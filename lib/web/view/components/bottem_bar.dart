@@ -24,26 +24,33 @@ class BottomBar extends StatelessWidget {
         children: [
           IconButton(
               disabledColor: Colors.grey,
-              onPressed: providerFalse.isButtonEnabled
+              color: Colors.white,
+              onPressed: providerTrue.isButtonEnabled
                   ? () {
-                if (providerFalse.isButtonEnabled) {
+                if (providerTrue.isButtonEnabled) {
                   providerFalse.webViewController!.goBack();
                 } else {
-                  return;
+                 return;
                 }
-              }
-                  : null,
+              } : null,
               icon: Icon(
                 Icons.arrow_back_ios,
-                color: Colors.white,
               )),
           IconButton(
-              onPressed: () {
-                providerFalse.webViewController?.goForward();
-              },
+              disabledColor: Colors.grey,
+              color: Colors.white,
+              onPressed:  providerTrue.isButtonEnabled2?() {
+                //providerFalse.webViewController?.goForward();
+                if (providerTrue.isButtonEnabled2) {
+                  providerFalse.webViewController!.goForward();
+                } else {
+                  providerFalse.checkIfShouldGoforword();
+                  return;
+
+                }
+              }:null,
               icon: Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.white,
               )),
           IconButton(
               onPressed: () {

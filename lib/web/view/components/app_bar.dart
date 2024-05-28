@@ -14,7 +14,7 @@ AppBar WebViewAppBar(
     leading: IconButton(
       onPressed: () {},
       icon: Icon(
-        Icons.home_outlined,
+        Icons.account_circle_outlined,
         color: Colors.white,
         size: 30,
       ),

@@ -25,6 +25,7 @@ class WebProvider extends ChangeNotifier {
   String selectedSearchEngine = 'Google';
   String? searchedUrl;
   bool isButtonEnabled = true;
+  bool isButtonEnabled2 = true;
 
   String groupValue = 'Google';
   PullToRefreshController? pullToRefreshController;
@@ -132,6 +133,19 @@ class WebProvider extends ChangeNotifier {
       notifyListeners();
     } else {
       isButtonEnabled = true;
+
+      notifyListeners();
+    }
+  }
+
+  void checkIfShouldGoforword() {
+    if (searchedUrl == history.last ) {
+      print(searchedUrl);
+      isButtonEnabled2 =  false;
+
+      notifyListeners();
+    } else {
+      isButtonEnabled2 = true;
 
       notifyListeners();
     }
